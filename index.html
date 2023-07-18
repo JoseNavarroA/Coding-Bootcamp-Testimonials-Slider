@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <title>Coding Bootcamp Testimonials Slider</title>
+    <style>
+      html{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: papayawhip;
+
+      }
+      body{
+        
+        /* background-position: bottom right; */
+        width: 800px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .perfil1, .perfil2{
+        width: 800px;
+        display: flex;
+        align-items: center;
+        background-image: url(images/pattern-curve.svg);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 300px 80px;
+        background-color: rgb(63 51 51);
+        color: rgb(211, 98, 98);
+        height: 400px;
+
+
+      }
+      
+      .fondo{
+        height: 110px;
+        width: 400px;
+      }
+      .perfil1 p, .perfil2 p{
+        
+
+      }
+      
+      .img{
+        width: 370px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 350px;
+      }
+      .img img{
+        height: 300px;
+        width: 300px;
+      }
+      .info{
+        background-position: 50px -7px;
+        height: 240px;
+        position: absolute;
+        top: 162px;
+        background-size: 50px;
+        padding-top: 20px;
+        width: 400px;
+        background-image: url(images/pattern-quotes.svg);
+        left: 90px;
+        background-repeat: no-repeat;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+      }
+      .container2{
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        background-image: url(images/pattern-bg.svg);
+        background-position: 22px 0px;
+        background-size: 360px 354px;
+        background-repeat: no-repeat;
+      }
+      .buttons{
+        display: flex;
+        position: absolute;
+        top: 370px;
+        gap: 15px;
+        background: white;
+        border-radius: 10px;
+        left: 450px;
+
+      }
+      .buttons button{
+        height: 24px;
+        border-radius: 5pc;
+        width: 30px;
+      }
+      .buttons div{
+        align-items: center;
+        display: flex;
+      }
+      .info p:nth-child(1){
+        width: 100%;
+      }
+      .people{
+        display: flex;
+
+      }
+      .color{
+        color: rgb(175, 113, 113);
+
+      }
+      .inactive{
+        display: none;
+      }
+      @media(max-width: 900px){
+        .perfil1, .perfil2{
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          position: relative;
+          flex-direction: column-reverse;
+        }
+        html{
+          width: 100%;
+        }
+        body{
+          height: 100%;
+        }
+        .info{
+          left: 10px;
+          padding: 15px;
+          top:0;
+          position: relative;
+          width: 100%;
+        }
+        .container{
+          width: 100%;
+          }
+        
+        .container2{
+          height: 100%;
+          width: 100%;
+        }
+        .img{
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-items: center;
+        }
+        .img img{
+          width: 80%;
+          height: 80%;
+        }
+        .buttons{
+          /* bottom: 68px; */
+          left: 160px;
+          background: transparent;
+          top: 320px;
+        }
+        .perfil1 p, .perfil2 p{
+
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+  
+      <div class="perfil1 ">
+        <div class="container">
+          <div class="info">
+            <p>
+              ” I’ve been interested in coding for a while but never taken the jump, until
+              now. I couldn’t recommend this course enough. I’m now in the job of my
+              dreams and so excited about the future. “
+              <div class="people">
+                <p>
+                  
+                  Tanya Sinclair &nbsp;
+                </p>
+      
+        <p class="color">
+                  UX Engineer
+                </p>
+              </div>
+            </p>
+          </div>
+          <div class="fondo"></div>
+        </div>
+        <div class="container2">
+          <div class="img" >
+          <img src="./images/image-tanya.jpg" alt="">
+          </div>
+          <div class="buttons">
+            <div>
+              <button onclick="toggle()"><img src="./images/icon-prev.svg"></button>
+               </div>
+            <div>
+              <button onclick="toggle()"><img src="./images/icon-next.svg"></button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>>
+    <div class="perfil2 inactive">
+      <div>
+        <div class="info">
+          <p>
+            ”If you want to lay the best foundation possible I’d recommend taking this
+            course. The depth the instructors go into is incredible. I now feel so
+            confident about starting up as a professional developer.“ 
+            <div class="people">
+              <p> John Tarkpor&nbsp;</p>
+              <p class="color">
+                Junior Front-end Developer
+              </p>
+            </div>
+          </p>
+          
+        </div>
+        <div class="fondo"></div>
+      </div>
+     
+      <div class="container2">
+        <div class="img" >
+        <img src="./images/image-john.jpg" alt="">
+        </div>
+        <div class="buttons">
+          <div>
+            <button onclick="toggle()"><img src="./images/icon-prev.svg"></button>
+          </div>
+          <div>
+            <button onclick="toggle()"><img src="./images/icon-next.svg"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggle(){
+        const perfil1 = document.querySelector(".perfil1")
+        const perfil2 = document.querySelector(".perfil2")
+
+        perfil1.classList.toggle("inactive")
+        perfil2.classList.toggle("inactive")
+      }
+    </script>
+  </body>
+</html>
